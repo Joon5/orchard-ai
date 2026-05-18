@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{BUSINESS_NAME}} — {{TRADE}} Services</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; color: #1a1a1a; background: #fff; }
+    header { background: #0d3b6e; color: white; padding: 2rem; text-align: center; }
+    header h1 { font-size: 2rem; }
+    header p { margin-top: 0.5rem; opacity: 0.85; }
+    .hero { padding: 3rem 1.5rem; text-align: center; background: #f4f8ff; }
+    .hero h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+    .cta-btn {
+      display: inline-block; margin-top: 1.5rem;
+      background: #e86a2e; color: white; padding: 0.85rem 2rem;
+      border-radius: 6px; text-decoration: none; font-size: 1.1rem; font-weight: 600;
+    }
+    .services { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; padding: 3rem 1.5rem; }
+    .service-card { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; width: 240px; }
+    .service-card h3 { margin-bottom: 0.5rem; }
+    .contact { background: #0d3b6e; color: white; padding: 2rem; text-align: center; }
+    .contact a { color: #f4c54a; }
+    footer { padding: 1rem; text-align: center; font-size: 0.8rem; color: #888; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>{{BUSINESS_NAME}}</h1>
+  <p>Licensed {{TRADE}} · Serving {{SERVICE_AREA}}</p>
+</header>
+
+<section class="hero">
+  <h2>Fast, reliable service — book in minutes</h2>
+  <p>{{TAGLINE}}</p>
+  <a href="booking_form.html" class="cta-btn">Book a Visit</a>
+</section>
+
+<section class="services">
+  <!-- Repeat service-card blocks as needed -->
+  <div class="service-card">
+    <h3>{{SERVICE_1_NAME}}</h3>
+    <p>{{SERVICE_1_DESC}}</p>
+  </div>
+  <div class="service-card">
+    <h3>{{SERVICE_2_NAME}}</h3>
+    <p>{{SERVICE_2_DESC}}</p>
+  </div>
+  <div class="service-card">
+    <h3>Emergency Calls</h3>
+    <p>Available 24/7 for urgent issues. Call or text us now.</p>
+  </div>
+</section>
+
+<div class="contact">
+  <p>Call or text: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+  <p style="margin-top:0.5rem;">Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+</div>
+
+<footer>
+  <p>© {{YEAR}} {{BUSINESS_NAME}}. Powered by Orchard.ai.</p>
+</footer>
+
+</body>
+</html>

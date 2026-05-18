@@ -1,0 +1,20 @@
+[
+  {
+    "id": "FC-001",
+    "category": "intent_misclassification",
+    "input": "I called last week and nobody showed up, I need to reschedule",
+    "agent": "intake",
+    "observed_output": "general_inquiry",
+    "expected_output": "complaint + booking_request",
+    "notes": "Multi-intent message with complaint framing causes intake agent to miss booking signal"
+  },
+  {
+    "id": "FC-002",
+    "category": "booking_hallucination",
+    "input": "Can you come this Saturday at 2pm?",
+    "agent": "booking",
+    "observed_output": "Confirmed for Saturday at 2pm",
+    "expected_output": "Check availability before confirming",
+    "notes": "Booking agent confirms without calendar context — classic hallucination failure"
+  }
+]

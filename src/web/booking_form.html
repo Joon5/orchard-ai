@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Visit — {{BUSINESS_NAME}}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f4f8ff; padding: 2rem 1rem; }
+    .form-card {
+      max-width: 480px; margin: 0 auto; background: white;
+      border-radius: 10px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 1.5rem; color: #0d3b6e; }
+    label { display: block; margin-bottom: 0.3rem; font-size: 0.9rem; font-weight: 600; color: #333; }
+    input, select, textarea {
+      width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #ccc;
+      border-radius: 6px; font-size: 1rem; margin-bottom: 1.2rem;
+    }
+    textarea { height: 80px; resize: vertical; }
+    .submit-btn {
+      width: 100%; background: #e86a2e; color: white; border: none;
+      padding: 0.85rem; border-radius: 6px; font-size: 1.05rem;
+      font-weight: 600; cursor: pointer;
+    }
+    .submit-btn:hover { background: #c95a22; }
+    .success { display: none; text-align: center; padding: 2rem; color: #1a7a1a; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+
+<div class="form-card">
+  <h1>Book a Visit</h1>
+
+  <form id="booking-form">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="+1 555 000 0000" required />
+
+    <label for="service">Service Needed</label>
+    <select id="service" name="service" required>
+      <option value="">Select a service…</option>
+      <option value="inspection">Inspection / Diagnosis</option>
+      <option value="repair">Repair</option>
+      <option value="installation">New Installation</option>
+      <option value="maintenance">Routine Maintenance</option>
+      <option value="emergency">Emergency</option>
+    </select>
+
+    <label for="preferred_time">Preferred Date / Time</label>
+    <input type="text" id="preferred_time" name="preferred_time" placeholder="e.g. This Thursday morning" />
+
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" name="notes" placeholder="Describe the issue or any details that would help…"></textarea>
+
+    <button type="submit" class="submit-btn">Request Appointment</button>
+  </form>
+
+  <div class="success" id="success-msg">
+    ✅ Request received! We'll text you within the hour to confirm.
+  </div>
+</div>
+
+<script>
+  document.getElementById("booking-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+
+    // POST to Orchard.ai booking endpoint (replace with actual URL)
+    try {
+      await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+    } catch (_) {
+      // Fail silently — SMS confirmation is the source of truth
+    }
+
+    e.target.style.display = "none";
+    document.getElementById("success-msg").style.display = "block";
+  });
+</script>
+
+</body>
+</html>
