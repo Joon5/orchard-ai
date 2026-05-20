@@ -66,7 +66,7 @@ def test_classify_requires_secret(client):
 
 def test_classify_happy_path(client):
     """POST /agent/classify returns intent + extracted fields when secret is correct."""
-    with patch("utils.llm_client.call_claude", return_value="booking_request") as mock_claude:
+    with patch("api.agent_router.call_claude", return_value="booking_request") as mock_claude:
         res = client.post(
             "/agent/classify",
             json={"message": "I need my AC fixed this week", "conversation_history": []},
@@ -86,7 +86,7 @@ def test_classify_happy_path(client):
 
 def test_classify_fallback_on_llm_error(client):
     """POST /agent/classify returns intent=unknown (HTTP 200) when LLM raises."""
-    with patch("utils.llm_client.call_claude", side_effect=Exception("Anthropic down")):
+    with patch("api.agent_router.call_claude", side_effect=Exception("Anthropic down")):
         res = client.post(
             "/agent/classify",
             json={"message": "test message"},
