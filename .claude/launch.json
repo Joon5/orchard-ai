@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", ".worktrees/phase1", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "Inngest Dev Server",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["inngest-cli", "dev", "--port", "8288", "-u", "http://localhost:3000/api/inngest"],
+      "port": 8288
+    },
+    {
+      "name": "Agent API",
+      "runtimeExecutable": "uvicorn",
+      "runtimeArgs": ["src.api.main:app", "--reload", "--port", "8000"],
+      "port": 8000
+    }
+  ]
+}
