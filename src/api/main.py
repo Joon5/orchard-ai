@@ -25,6 +25,13 @@ app = FastAPI(title="Orchard.ai Agent Service", version="0.1.0")
 # Agent secret — set ORCHARD_AGENT_SECRET in environment
 _AGENT_SECRET = os.getenv("ORCHARD_AGENT_SECRET", "")
 
+if not _AGENT_SECRET:
+    import logging
+    logging.warning(
+        "ORCHARD_AGENT_SECRET is not set — "
+        "all /agent/classify requests will return 401"
+    )
+
 
 # ── Health ─────────────────────────────────────────────────────────────────────
 
