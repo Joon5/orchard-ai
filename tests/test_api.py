@@ -66,12 +66,13 @@ def test_classify_requires_secret(client):
 
 def test_classify_happy_path(client):
     """POST /agent/classify returns intent + extracted fields when secret is correct."""
-    with patch("utils.llm_client.call_claude", return_value="booking_request"):
+    with patch("utils.llm_client.call_claude", return_value="booking_request") as mock_claude:
         res = client.post(
             "/agent/classify",
             json={"message": "I need my AC fixed this week", "conversation_history": []},
             headers={"X-Orchard-Secret": SECRET},
         )
+    assert mock_claude.called, "call_claude should have been invoked by the agent router"
     assert res.status_code == 200
     data = res.json()
     assert data["intent"] == "booking_request"

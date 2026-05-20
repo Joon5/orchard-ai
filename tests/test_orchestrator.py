@@ -2,11 +2,8 @@
 Unit tests for the Orchard.ai Orchestrator.
 Uses mocking to isolate agent behavior from live LLM calls.
 """
-import sys
 import unittest
 from unittest.mock import MagicMock, patch
-
-sys.path.insert(0, "../src")
 
 from pipelines.orchestrator import Orchestrator
 
