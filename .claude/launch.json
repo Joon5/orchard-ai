@@ -18,6 +18,12 @@
       "runtimeExecutable": "uvicorn",
       "runtimeArgs": ["src.api.main:app", "--reload", "--port", "8000"],
       "port": 8000
+    },
+    {
+      "name": "Marketing Site (getorchard.app)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "site", "run", "dev", "--", "-p", "3100"],
+      "port": 3100
     }
   ]
 }

@@ -1,0 +1,7 @@
+<svg viewBox="108 58 192 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Orchard logo">
+  <circle cx="200" cy="168" r="82" fill="#2D5A27"/>
+  <circle cx="200" cy="168" r="52" fill="#F7F5EF"/>
+  <ellipse cx="254" cy="107" rx="20" ry="37" transform="rotate(-38 254 107)" fill="#4A8C3F"/>
+  <ellipse cx="254" cy="107" rx="9" ry="18" transform="rotate(-38 254 107)" fill="#F7F5EF"/>
+  <line x1="254" y1="129" x2="265" y2="147" stroke-width="3.5" stroke="#4A8C3F" stroke-linecap="round"/>
+</svg>

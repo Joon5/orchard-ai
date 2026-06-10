@@ -10,3 +10,10 @@ __pycache__/
 *.pyc
 *.log
 .venv/
+
+# Marketing site (site/)
+site/node_modules/
+site/.next/
+site/out/
+site/next-env.d.ts
+site/tsconfig.tsbuildinfo
