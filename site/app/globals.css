@@ -151,13 +151,18 @@ h1, h2, h3, h4 { margin: 0 0 12px; line-height: 1.15; letter-spacing: -0.02em; }
 .example-line { height: 12px; border-radius: 6px; background: #ece8dd; margin-bottom: 12px; }
 .example-line.wide { width: 80%; }
 .example-line:not(.wide) { width: 55%; }
-.example-pill { display: inline-block; margin-top: 8px; background: var(--green); color: #fff; font-weight: 700; font-size: 14px; padding: 9px 20px; border-radius: 999px; }
+.example-pill { display: inline-block; background: var(--green); color: #fff; font-weight: 700; font-size: 14px; padding: 9px 20px; border-radius: 999px; }
+.example-bar { position: relative; }
+.example-url { position: absolute; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--ink-soft); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 2px 14px; }
+.example-headline { font-weight: 800; font-size: 19px; margin: 4px 0 4px; color: var(--ink); }
+.example-sub { color: var(--ink-soft); font-size: 13px; margin-bottom: 16px; }
+.example-services { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.example-services span { background: var(--green-soft); color: var(--green-dark); font-size: 12.5px; font-weight: 600; padding: 4px 11px; border-radius: 999px; }
+.example-row { display: flex; align-items: center; justify-content: space-between; }
+.example-rating { font-size: 13px; font-weight: 700; color: #c9871f; }
 
-/* ── Floating motion ───────────────────────────────────────── */
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-.floaty { animation: float 6s ease-in-out infinite; will-change: transform; }
-.dash.floaty { animation-duration: 7.5s; }
-@media (prefers-reduced-motion: reduce) { .floaty { animation: none; } }
+/* ── Founder photo ─────────────────────────────────────────── */
+.founder-photo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 4px 14px rgba(17,24,39,0.12); }
 
 /* ── Owner dashboard mockup ────────────────────────────────── */
 .dash { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 18px; box-shadow: 0 20px 50px rgba(17,24,39,0.14); max-width: 380px; margin: 0 auto; width: 100%; }

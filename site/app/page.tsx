@@ -4,8 +4,9 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 import CountUp from "@/components/CountUp";
 
-const TEL = "tel:+14244018308";
-const SMS = "sms:+14244018308";
+const TEL = "tel:+14242251386";
+const SMS = "sms:+14242251386";
+const EMAIL = "mailto:orchard.ai.app@gmail.com";
 
 const FEATURES = [
   { icon: "globe", title: "A website that books jobs", desc: "A clean, professional site with online booking. We build it and keep it running for you." },
@@ -69,7 +70,7 @@ export default function Home() {
               <li><Icon name="check" size={18} /> Santa Clarita &amp; the South Bay</li>
             </ul>
           </div>
-          <div className="hero-visual floaty">
+          <div className="hero-visual">
             <SmsDemo />
           </div>
         </div>
@@ -158,7 +159,7 @@ export default function Home() {
                 <a className="btn btn-primary" href={SMS}>Text me for a walkthrough</a>
               </div>
 
-              <div className="dash floaty">
+              <div className="dash">
                 <div className="dash-top">
                   <div>
                     <div className="dash-hello">Good morning, Mike</div>
@@ -223,12 +224,22 @@ export default function Home() {
                 </Link>
               </div>
               <Link href="/demo" className="example-card" aria-label="Open the sample site">
-                <div className="example-bar"><span /><span /><span /></div>
+                <div className="example-bar">
+                  <span /><span /><span />
+                  <span className="example-url">oakwoodhandyman.com</span>
+                </div>
                 <div className="example-body">
                   <div className="example-logo">🔨 Oakwood Handyman</div>
-                  <div className="example-line wide" />
-                  <div className="example-line" />
-                  <div className="example-pill">Book a job</div>
+                  <div className="example-headline">Your local handyman, one text away</div>
+                  <div className="example-sub">Serving the Santa Clarita Valley · Licensed &amp; insured</div>
+                  <div className="example-services">
+                    <span>Plumbing</span><span>Electrical</span><span>Drywall</span>
+                    <span>Gutters</span><span>Assembly</span>
+                  </div>
+                  <div className="example-row">
+                    <span className="example-rating">★★★★★ 5.0 (38)</span>
+                    <span className="example-pill">Book a job</span>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -263,14 +274,15 @@ export default function Home() {
         <div className="wrap">
           <Reveal>
             <div className="founder">
-              <div className="avatar">JO</div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="founder-photo" src="/jonathan.jpg" alt="Jonathan Oh, founder of Orchard" />
               <div>
                 <div className="trust-name">Jonathan Oh, Founder</div>
                 <p>
-                  I am local to Santa Clarita and the South Bay. I set up every
-                  business myself, in person, and you get my cell number, not a
-                  ticket queue. Your first month is free, so if it is not earning
-                  its keep, you walk away.
+                  I am local to Santa Clarita and grew up in the South Bay. Many
+                  of my friends work in the trades, which exposed me to the regular
+                  inefficiencies they deal with. Orchard.ai is my solution to that,
+                  and I set up every business dashboard and maintain it myself.
                 </p>
               </div>
             </div>
@@ -312,9 +324,9 @@ export default function Home() {
           </div>
           <div className="footer-col">
             <h4>Get in touch</h4>
-            <a href={SMS}>Text (424) 401-8308</a>
-            <a href={TEL}>Call Jonathan</a>
-            <a href="mailto:jdoh2023@gmail.com">Email us</a>
+            <a href={SMS}>Text (424) 225-1386</a>
+            <a href={TEL}>Call us</a>
+            <a href={EMAIL}>orchard.ai.app@gmail.com</a>
           </div>
         </div>
         <div className="footer-base">Built in Santa Clarita, CA · getorchard.app</div>

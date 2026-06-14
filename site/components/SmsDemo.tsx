@@ -6,7 +6,6 @@ import { SCRIPT, buildSchedule } from "@/lib/conversation";
 export default function SmsDemo() {
   const [visible, setVisible] = useState(0);
   const [typingFor, setTypingFor] = useState<number | null>(null);
-  const [done, setDone] = useState(false);
   const started = useRef(false);
   const timers = useRef<number[]>([]);
   const frameRef = useRef<HTMLDivElement | null>(null);
@@ -17,7 +16,6 @@ export default function SmsDemo() {
     timers.current = [];
     setVisible(0);
     setTypingFor(null);
-    setDone(false);
 
     const cues = buildSchedule(SCRIPT);
     cues.forEach((cue, i) => {
@@ -33,8 +31,6 @@ export default function SmsDemo() {
         }, cue.showMessageAt)
       );
     });
-    const end = cues[cues.length - 1].showMessageAt + 800;
-    timers.current.push(window.setTimeout(() => setDone(true), end));
   }, []);
 
   // Auto-play once when the phone scrolls into view
@@ -86,11 +82,6 @@ export default function SmsDemo() {
           </div>
         )}
       </div>
-      {done && (
-        <button className="replay-btn" onClick={play}>
-          ↻ Watch it again
-        </button>
-      )}
     </div>
   );
 }
