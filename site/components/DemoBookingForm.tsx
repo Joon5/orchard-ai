@@ -26,17 +26,17 @@ export default function DemoBookingForm() {
   if (booking) {
     return (
       <div className="confirm-panel">
-        <h2>Request received, {booking.name}! ✅</h2>
+        <h2>Request received, {booking.name}!</h2>
         <p>
-          <strong>{booking.service}</strong> — {booking.day}, {booking.window}
+          <strong>{booking.service}</strong>, {booking.day}, {booking.window}
         </p>
         <p>
           Mike just got a text with your request. You&apos;ll get a confirmation
           text the moment he taps approve.
         </p>
         <p style={{ fontSize: "13.5px", color: "var(--ink-soft)" }}>
-          (This is a simulation — no real booking was made. Your business gets
-          this exact flow, live.)
+          This is a simulation, so no real booking was made. Your business gets
+          this exact flow, live.
         </p>
       </div>
     );

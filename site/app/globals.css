@@ -153,6 +153,36 @@ h1, h2, h3, h4 { margin: 0 0 12px; line-height: 1.15; letter-spacing: -0.02em; }
 .example-line:not(.wide) { width: 55%; }
 .example-pill { display: inline-block; margin-top: 8px; background: var(--green); color: #fff; font-weight: 700; font-size: 14px; padding: 9px 20px; border-radius: 999px; }
 
+/* ── Floating motion ───────────────────────────────────────── */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.floaty { animation: float 6s ease-in-out infinite; will-change: transform; }
+.dash.floaty { animation-duration: 7.5s; }
+@media (prefers-reduced-motion: reduce) { .floaty { animation: none; } }
+
+/* ── Owner dashboard mockup ────────────────────────────────── */
+.dash { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 18px; box-shadow: 0 20px 50px rgba(17,24,39,0.14); max-width: 380px; margin: 0 auto; width: 100%; }
+.dash-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.dash-hello { font-weight: 800; font-size: 16px; }
+.dash-date { color: var(--ink-soft); font-size: 13px; }
+.dash-bell { width: 36px; height: 36px; border-radius: 50%; background: var(--green-soft); color: var(--green); display: flex; align-items: center; justify-content: center; }
+.dash-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 18px; }
+.dash-chip { background: var(--green-soft); border-radius: 12px; padding: 10px 6px; text-align: center; }
+.dash-chip strong { display: block; font-size: 20px; font-weight: 800; color: var(--green-dark); }
+.dash-chip span { font-size: 11.5px; color: var(--ink-soft); }
+.dash-chip.alert { background: #fbeadd; }
+.dash-chip.alert strong { color: var(--accent); }
+.dash-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin: 14px 0 8px; }
+.dash-job { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+.dash-job.pending { border-left: 3px solid var(--accent); }
+.dash-job.done { background: var(--green-soft); border-color: transparent; }
+.dash-job-title { font-weight: 700; font-size: 14px; }
+.dash-job-sub { color: var(--ink-soft); font-size: 12.5px; margin-top: 1px; }
+.dash-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.dash-btn { font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
+.dash-btn.confirm { background: var(--green); color: #fff; }
+.dash-btn.ghost { border: 1px solid var(--line); color: var(--ink-soft); }
+.dash-tick { width: 26px; height: 26px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
 /* ── Pricing card ──────────────────────────────────────────── */
 .pricing-card { background: var(--card); border: 2px solid var(--green); border-radius: var(--radius); padding: 30px 28px; text-align: center; max-width: 460px; margin: 0 auto; box-shadow: 0 14px 40px rgba(45,90,39,0.14); }
 .badge { display: inline-block; background: var(--accent); color: #fff; font-size: 12.5px; font-weight: 700; letter-spacing: 0.05em; padding: 5px 14px; border-radius: 999px; margin-bottom: 16px; text-transform: uppercase; }

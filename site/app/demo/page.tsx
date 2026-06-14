@@ -38,7 +38,7 @@ export default function DemoHome() {
         <h2 className="section-title">Serving the Santa Clarita Valley</h2>
         <p className="tagline">
           Newhall, Valencia, Saugus, Canyon Country, and Castaic.
-          Text or call anytime — if we miss you, we text right back.
+          Text or call anytime. If we miss you, we text right back.
         </p>
         <div className="cta-row">
           <Link className="btn btn-ghost" href="/demo/book">Check our availability</Link>

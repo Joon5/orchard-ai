@@ -10,7 +10,7 @@ export default function DemoLayout({
   return (
     <div>
       <div className="demo-banner">
-        This is a live demo — <Link href="/">your business gets one of these</Link>
+        This is a live demo. <Link href="/">Your business gets one of these.</Link>
       </div>
       <nav className="demo-nav">
         <Link className="logo" href="/demo">🔨 Oakwood Handyman</Link>
@@ -22,7 +22,7 @@ export default function DemoLayout({
         Oakwood Handyman Services · Serving the Santa Clarita Valley ·
         Licensed &amp; insured · (310) 555-0144
         <br />
-        <em>Sample website by Orchard — getorchard.app</em>
+        <em>Sample website by Orchard · getorchard.app</em>
       </footer>
     </div>
   );

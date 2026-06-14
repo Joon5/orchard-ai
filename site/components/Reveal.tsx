@@ -17,7 +17,8 @@ export default function Reveal({ children }: { children: React.ReactNode }) {
           obs.disconnect();
         }
       },
-      { threshold: 0.15 }
+      // Fire once the block reaches the middle of the viewport, not as it enters
+      { threshold: 0, rootMargin: "0px 0px -45% 0px" }
     );
     obs.observe(el);
     return () => obs.disconnect();

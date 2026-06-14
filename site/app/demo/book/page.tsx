@@ -6,7 +6,7 @@ export default function DemoBook() {
       <section className="demo-hero">
         <h1>Book a job</h1>
         <p className="tagline">
-          Pick a time that works — Mike confirms with one tap and you get a
+          Pick a time that works. Mike confirms with one tap and you get a
           text back.
         </p>
       </section>

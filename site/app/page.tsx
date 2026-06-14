@@ -2,23 +2,24 @@ import Link from "next/link";
 import SmsDemo from "@/components/SmsDemo";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
+import CountUp from "@/components/CountUp";
 
 const TEL = "tel:+14244018308";
 const SMS = "sms:+14244018308";
 
 const FEATURES = [
-  { icon: "globe", title: "A professional website", desc: "A clean three-page site with online booking — built and maintained for you." },
-  { icon: "phone", title: "A business number", desc: "A dedicated line for the business. Keep your personal cell personal." },
-  { icon: "chat", title: "Automatic text-back", desc: "Every missed call gets an instant text. Customers book right from the reply." },
-  { icon: "calendar", title: "A booking calendar", desc: "Jobs land on your Google Calendar. Reminders go out on their own." },
-  { icon: "dashboard", title: "An owner dashboard", desc: "Every job in one place. Approve with one tap — nothing books without you." },
-  { icon: "shield", title: "Your data, locked down", desc: "Encrypted, separated per business. Payments run through Stripe — never us." },
+  { icon: "globe", title: "A website that books jobs", desc: "A clean, professional site with online booking. We build it and keep it running for you." },
+  { icon: "phone", title: "Your own business number", desc: "A dedicated line for the business, so your personal cell stays personal." },
+  { icon: "chat", title: "Instant text-back", desc: "Every missed call gets a reply in seconds. Customers book right from the text." },
+  { icon: "calendar", title: "A calendar that fills itself", desc: "Jobs land on your Google Calendar. Reminders go out on their own." },
+  { icon: "dashboard", title: "One simple dashboard", desc: "Every job in one place. Approve it with a tap. Nothing books without you." },
+  { icon: "shield", title: "Your customers, protected", desc: "Everything is encrypted and kept separate. Payments run through Stripe, never through us." },
 ];
 
 const STEPS = [
-  { icon: "phone", n: "1", title: "A call comes in while you're working", desc: "You're under a sink or up a ladder. You can't stop to answer — so it goes to voicemail." },
-  { icon: "chat", n: "2", title: "Orchard texts back in seconds", desc: "It greets the customer, asks what they need, and offers your real open times." },
-  { icon: "check", n: "3", title: "You tap confirm — job booked", desc: "The appointment lands on your calendar and the customer gets a confirmation text." },
+  { icon: "phone", n: "1", title: "A call comes in while you work", desc: "You are under a sink or up a ladder. You cannot stop, so the call would normally go to voicemail." },
+  { icon: "chat", n: "2", title: "Orchard texts back in seconds", desc: "It greets the customer, asks what they need, and offers the times you actually have open." },
+  { icon: "check", n: "3", title: "You tap confirm and it is booked", desc: "The job lands on your calendar and the customer gets a confirmation text. Done." },
 ];
 
 function Wordmark() {
@@ -51,12 +52,12 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow">AI front desk for the trades</span>
+            <span className="eyebrow">The AI front desk for the trades</span>
             <h1>Never miss another job.</h1>
             <p className="lead">
-              When you&apos;re on a job and can&apos;t pick up, Orchard texts the
-              customer back in seconds, offers your open times, and books it
-              straight to your calendar. You just tap confirm.
+              You are on a job and the phone rings. Orchard answers, texts the
+              customer back in seconds, and offers your open times. The booking
+              lands on your calendar and all you do is tap confirm.
             </p>
             <div className="cta-row">
               <a className="btn btn-primary" href={SMS}>Text me about it</a>
@@ -65,10 +66,10 @@ export default function Home() {
             <ul className="microtrust">
               <li><Icon name="check" size={18} /> Set up for you in a day</li>
               <li><Icon name="check" size={18} /> No tech skills needed</li>
-              <li><Icon name="check" size={18} /> Santa Clarita &amp; South Bay</li>
+              <li><Icon name="check" size={18} /> Santa Clarita &amp; the South Bay</li>
             </ul>
           </div>
-          <div className="hero-visual">
+          <div className="hero-visual floaty">
             <SmsDemo />
           </div>
         </div>
@@ -81,29 +82,29 @@ export default function Home() {
             <span className="eyebrow eyebrow-light">What a missed call really costs</span>
             <div className="stats">
               <div className="stat">
-                <div className="stat-num">62%</div>
-                <p>of callers ring a competitor after one unanswered call</p>
+                <div className="stat-num"><CountUp value={62} suffix="%" /></div>
+                <p>of callers ring the next company when you do not pick up</p>
               </div>
               <div className="stat">
-                <div className="stat-num">$275–1,200</div>
-                <p>the typical value of a single service job</p>
+                <div className="stat-num">$275 to $1,200</div>
+                <p>is what a single service job is typically worth</p>
               </div>
               <div className="stat">
-                <div className="stat-num">85%</div>
+                <div className="stat-num"><CountUp value={85} suffix="%" /></div>
                 <p>of people who reach voicemail never call back</p>
               </div>
             </div>
-            <p className="stat-note">Industry estimates, U.S. home-services sector.</p>
+            <p className="stat-note">Industry estimates from the U.S. home services sector.</p>
           </Reveal>
         </div>
       </section>
 
       {/* ── How it works ───────────────────────────────────── */}
-      <section className="band" id="how">
+      <section className="band band-soft" id="how">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">How it works</span>
-            <h2 className="section-title">From missed call to booked job — automatically</h2>
+            <h2 className="section-title">Booked jobs without picking up the phone</h2>
             <div className="steps">
               {STEPS.map((s) => (
                 <div className="step" key={s.n}>
@@ -121,11 +122,11 @@ export default function Home() {
       </section>
 
       {/* ── Features ───────────────────────────────────────── */}
-      <section className="band band-soft" id="features">
+      <section className="band" id="features">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">What you get</span>
-            <h2 className="section-title">Everything a front desk does — without hiring one</h2>
+            <h2 className="section-title">Everything a front desk does, without hiring one</h2>
             <div className="features">
               {FEATURES.map((f) => (
                 <div className="feature" key={f.title}>
@@ -141,6 +142,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Owner dashboard ────────────────────────────────── */}
+      <section className="band band-soft">
+        <div className="wrap">
+          <Reveal>
+            <div className="example">
+              <div>
+                <span className="eyebrow">Built for the owner</span>
+                <h2 className="section-title left">Run your whole day from your phone</h2>
+                <p className="lead">
+                  Open the app and see today at a glance. New requests, jobs
+                  waiting on your okay, and what is coming up next. Tap once to
+                  confirm. Tap once to reschedule. You stay in control of every job.
+                </p>
+                <a className="btn btn-primary" href={SMS}>Text me for a walkthrough</a>
+              </div>
+
+              <div className="dash floaty">
+                <div className="dash-top">
+                  <div>
+                    <div className="dash-hello">Good morning, Mike</div>
+                    <div className="dash-date">Thursday, today</div>
+                  </div>
+                  <span className="dash-bell"><Icon name="clock" size={18} /></span>
+                </div>
+                <div className="dash-chips">
+                  <div className="dash-chip alert"><strong>2</strong><span>to confirm</span></div>
+                  <div className="dash-chip"><strong>3</strong><span>today</span></div>
+                  <div className="dash-chip"><strong>6</strong><span>this week</span></div>
+                </div>
+                <div className="dash-label">Waiting on you</div>
+                <div className="dash-job pending">
+                  <div>
+                    <div className="dash-job-title">Garbage disposal leak</div>
+                    <div className="dash-job-sub">Jane S. · Thu 9–11 AM</div>
+                  </div>
+                  <div className="dash-actions">
+                    <span className="dash-btn confirm">Confirm</span>
+                    <span className="dash-btn ghost">Move</span>
+                  </div>
+                </div>
+                <div className="dash-job pending">
+                  <div>
+                    <div className="dash-job-title">Ceiling fan install</div>
+                    <div className="dash-job-sub">Dave R. · Fri 2–4 PM</div>
+                  </div>
+                  <div className="dash-actions">
+                    <span className="dash-btn confirm">Confirm</span>
+                    <span className="dash-btn ghost">Move</span>
+                  </div>
+                </div>
+                <div className="dash-label">Confirmed today</div>
+                <div className="dash-job done">
+                  <div>
+                    <div className="dash-job-title">Faucet replacement</div>
+                    <div className="dash-job-sub">Carla M. · 1–2 PM</div>
+                  </div>
+                  <span className="dash-tick"><Icon name="check" size={16} /></span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── See a real example ─────────────────────────────── */}
       <section className="band">
         <div className="wrap">
@@ -148,10 +213,10 @@ export default function Home() {
             <div className="example">
               <div>
                 <span className="eyebrow">See it for real</span>
-                <h2 className="section-title left">A working site, built for a handyman</h2>
+                <h2 className="section-title left">A real website, built for a handyman</h2>
                 <p className="lead">
-                  Here&apos;s a real example of the website and booking flow your
-                  business gets — try the booking form yourself.
+                  This is the exact website and booking flow your business gets.
+                  Go ahead and try the booking form yourself.
                 </p>
                 <Link className="btn btn-primary" href="/demo">
                   View the sample site <Icon name="arrow" size={18} />
@@ -179,13 +244,13 @@ export default function Home() {
             <h2 className="section-title">One price, locked in for good</h2>
             <div className="pricing-card">
               <div className="badge">First 10 businesses only</div>
-              <div className="price-big">$199<small>/month — locked for life</small></div>
-              <p className="price-line">$249 one-time setup · your first month is free</p>
+              <div className="price-big">$199<small>per month, locked for life</small></div>
+              <p className="price-line">$249 one-time setup. Your first month is free.</p>
               <ul className="pricing-list">
-                <li>Everything set up for you, in person — no tech skills needed</li>
-                <li>Your price never increases, ever</li>
-                <li>One recovered job a month more than pays for it</li>
-                <li>Cancel anytime — no contract</li>
+                <li>Everything set up for you, in person. No tech skills needed.</li>
+                <li>Your price never goes up. Ever.</li>
+                <li>One recovered job a month more than covers it.</li>
+                <li>Cancel anytime. No contract.</li>
               </ul>
               <a className="btn btn-primary btn-block" href={SMS}>Claim a founding spot</a>
             </div>
@@ -200,11 +265,11 @@ export default function Home() {
             <div className="founder">
               <div className="avatar">JO</div>
               <div>
-                <div className="trust-name">Jonathan Oh — Founder</div>
+                <div className="trust-name">Jonathan Oh, Founder</div>
                 <p>
-                  I&apos;m local to Santa Clarita and the South Bay. I set up every
-                  business myself, in person, and you get my cell number — not a
-                  ticket queue. Your first month is free, so if it isn&apos;t earning
+                  I am local to Santa Clarita and the South Bay. I set up every
+                  business myself, in person, and you get my cell number, not a
+                  ticket queue. Your first month is free, so if it is not earning
                   its keep, you walk away.
                 </p>
               </div>
@@ -218,7 +283,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal>
             <h2>Ready to stop missing jobs?</h2>
-            <p>Text me and I&apos;ll show you exactly how it&apos;d work for your business.</p>
+            <p>Send me a text and I will show you exactly how it would work for your business.</p>
             <div className="cta-row center">
               <a className="btn btn-on-dark" href={SMS}>Text me about it</a>
               <a className="btn btn-ghost-light" href={TEL}>Call Jonathan</a>

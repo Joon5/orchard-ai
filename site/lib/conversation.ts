@@ -35,7 +35,7 @@ export const SCRIPT: ScriptEntry[] = [
   },
   {
     from: "orchard",
-    text: "We can fix that. We have Thursday 9–11 AM or Friday 2–4 PM open — which works better?",
+    text: "We can fix that. We have Thursday 9–11 AM or Friday 2–4 PM open. Which works better?",
     delayBefore: 1400,
     typingMs: 1400,
   },
@@ -47,13 +47,13 @@ export const SCRIPT: ScriptEntry[] = [
   },
   {
     from: "orchard",
-    text: "You're booked for Thursday 9–11 AM ✅ We'll text you a reminder the day before. Anything else?",
+    text: "You're booked for Thursday 9–11 AM. We'll text you a reminder the day before. Anything else?",
     delayBefore: 1800,
     typingMs: 1400,
   },
   {
     from: "system",
-    text: "Mike (owner) confirmed the job with one tap — without leaving the job he was on.",
+    text: "Mike confirmed the job with one tap, without leaving the work he was on.",
     delayBefore: 1700,
     typingMs: 0,
   },

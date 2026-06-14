@@ -2,14 +2,14 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const DESCRIPTION =
-  "AI front desk for trade businesses. Missed calls become booked appointments, automatically. Website, business number, booking, and reminders — set up for you.";
+  "The AI front desk for trade businesses. When you can't pick up, Orchard texts customers back, books the job, and adds it to your calendar. You just tap confirm.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://getorchard.app"),
-  title: "Orchard — Never miss another job",
+  title: "Orchard | Never miss another job",
   description: DESCRIPTION,
   openGraph: {
-    title: "Orchard — Never miss another job",
+    title: "Orchard | Never miss another job",
     description: DESCRIPTION,
     url: "https://getorchard.app",
     siteName: "Orchard",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Orchard — Never miss another job",
+    title: "Orchard | Never miss another job",
     description: DESCRIPTION,
     images: ["/og.jpg"],
   },
